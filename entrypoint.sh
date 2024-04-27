@@ -24,6 +24,7 @@ fi
 
 if ! ${DIFF_BASE+false};
 then
+	echo $(git log)
 	changedFiles=$(git --no-pager diff --name-only $DIFF_BASE..HEAD -- '*.swift')
 
 	if [ -z "$changedFiles" ]
